@@ -1,0 +1,348 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- etims.standard.code search view -->
+    <record id="etims_standard_code_view_search" model="ir.ui.view">
+        <field name="name">etims.standard.code.view.search</field>
+        <field name="model">etims.standard.code</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="parentid"/>
+                <field name="description"/>
+
+                <group expand="0" string="Group By">
+                    <filter name="codes_groupby_code_type" string="Code Types" context="{'group_by': 'code_type'}" />
+                    <filter name="codes_groupby_parentid" string="Parent" context="{'group_by': 'parentid'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- etims.standard.code tree view -->
+    <record id="etims_standard_code_view_tree" model="ir.ui.view">
+        <field name="name">etims.standard.code.view.tree</field>
+        <field name="model">etims.standard.code</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code_type"/>
+                <field name="description"/>
+                <field name="parentid"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- etims.standard.code form view -->
+    <record id="etims_standard_code_view_form" model="ir.ui.view">
+        <field name="name">etims.standard.code.view.form</field>
+        <field name="model">etims.standard.code</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="parentid"/>
+                        </group>
+                        <group>
+                            <field name="code_type"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- etims.classification.code action window -->
+    <record id="etims_standard_code_action" model="ir.actions.act_window">
+        <field name="name">Standard Codes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">etims.standard.code</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{'create': 0, 'edit': 0, 'delete': 0}</field>
+    </record>
+
+    <!-- etims.classification.code search view -->
+    <record id="etims_classification_code_view_search" model="ir.ui.view">
+        <field name="name">etims.classification.code.view.search</field>
+        <field name="model">etims.classification.code</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="parentid"/>
+                <field name="description"/>
+
+                <group expand="0" string="Group By">
+                    <filter name="codes_groupby_code_type" string="Code Types" context="{'group_by': 'code_type'}" />
+                    <filter name="codes_groupby_parentid" string="Parent" context="{'group_by': 'parentid'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- etims.classification.code tree view -->
+    <record id="etims_classification_code_view_tree" model="ir.ui.view">
+        <field name="name">etims.classification.code.view.tree</field>
+        <field name="model">etims.classification.code</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code_type"/>
+                <field name="description"/>
+                <field name="parentid"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- etims.classification.code form view -->
+    <record id="etims_classification_code_view_form" model="ir.ui.view">
+        <field name="name">etims.classification.code.view.form</field>
+        <field name="model">etims.classification.code</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="parentid"/>
+                        </group>
+                        <group>
+                            <field name="code_type"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- etims.classification.code action window -->
+    <record id="etims_classification_code_action" model="ir.actions.act_window">
+        <field name="name">ETIMS Item Codes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">etims.classification.code</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{'create': 0, 'edit': 0, 'delete': 0}</field>
+    </record>
+
+    <!-- etims.package.code search view -->
+    <record id="etims_package_code_view_search" model="ir.ui.view">
+        <field name="name">etims.package.code.view.search</field>
+        <field name="model">etims.package.code</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code"/>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- etims.package.code tree view -->
+    <record id="etims_package_code_view_tree" model="ir.ui.view">
+        <field name="name">etims.package.code.view.tree</field>
+        <field name="model">etims.package.code</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- etims.package.code form view -->
+    <record id="etims_package_code_view_form" model="ir.ui.view">
+        <field name="name">etims.package.code.view.form</field>
+        <field name="model">etims.package.code</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- etims.classification.code action window -->
+    <record id="etims_package_code_action" model="ir.actions.act_window">
+        <field name="name">ETIMS Packaging Codes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">etims.package.code</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{'create': 0, 'edit': 0, 'delete': 0}</field>
+    </record>
+
+      <!-- etims.uom.code search view -->
+      <record id="etims_uom_code_view_search" model="ir.ui.view">
+        <field name="name">etims.uom.code.view.search</field>
+        <field name="model">etims.uom.code</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code"/>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- etims.uom.code tree view -->
+    <record id="etims_uom_code_view_tree" model="ir.ui.view">
+        <field name="name">etims.uom.code.view.tree</field>
+        <field name="model">etims.uom.code</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- etims.uom.code form view -->
+    <record id="etims_uom_code_view_form" model="ir.ui.view">
+        <field name="name">etims.uom.code.view.form</field>
+        <field name="model">etims.uom.code</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- etims Notices tree view -->
+    <record id="etims_notices_code_view_tree" model="ir.ui.view">
+        <field name="name">etims.notices.view.tree</field>
+        <field name="model">etims.notices</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="code_type"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- etims.Notices form view -->
+    <record id="etims_notices_view_form" model="ir.ui.view">
+        <field name="name">etims.notices.view.form</field>
+        <field name="model">etims.notices</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="code_type"/>
+                            <field name="regrNm"/>
+                            <field name="description"/>
+                            
+                            
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+     <!-- etims branches tree view -->
+     <record id="etims_branches_code_view_tree" model="ir.ui.view">
+        <field name="name">etims.branches.view.tree</field>
+        <field name="model">etims.branches</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="code_type"/>
+                <field name="tin"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- etims.branchs form view -->
+    <record id="etims_branches_view_form" model="ir.ui.view">
+        <field name="name">etims.branches.view.form</field>
+        <field name="model">etims.branches</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="code_type"/>
+                            <field name="regrNm"/>
+                            <field name="description"/>
+                            <field name="tin"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- etims.classification.code action window -->
+    <record id="etims_uom_code_action" model="ir.actions.act_window">
+        <field name="name">ETIMS Uom Codes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">etims.uom.code</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{'create': 0, 'edit': 0, 'delete': 0}</field>
+    </record>
+
+
+
+     <!-- etims.Branches action window -->
+     <record id="etims_branches_action" model="ir.actions.act_window">
+        <field name="name">ETIMS Branches</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">etims.branches</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{'create': 0, 'edit': 0, 'delete': 0}</field>
+    </record>
+
+
+    <!-- etims.Notices action window -->
+    <record id="etims_notices_action" model="ir.actions.act_window">
+        <field name="name">ETIMS Notices</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">etims.notices</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{'create': 0, 'edit': 0, 'delete': 0}</field>
+    </record>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="etims_menu_categ" name="ETIMS" parent="account.menu_finance_configuration" sequence="300">
+        <menuitem id="standard_codes_menu_act" name="Standard Codes" action="etims_standard_code_action" sequence="1"/>
+        <menuitem id="items_class_list_menu_act" name="Item Class Codes" action="etims_classification_code_action" sequence="2"/>
+        <menuitem id="etims_package_code_menu" name="Packaging Codes" action="etims_package_code_action" sequence="3"/>
+        <menuitem id="etims_uom_code_menu" name="Uom Codes" action="etims_uom_code_action" sequence="4"/>
+        <menuitem id="etims_notices" name="Etims Notices" action="etims_notices_action" sequence="5"/>
+        <menuitem id="etims_branches" name="Etims Branches" action="etims_branches_action" sequence="6"/>
+    </menuitem>
+</odoo>

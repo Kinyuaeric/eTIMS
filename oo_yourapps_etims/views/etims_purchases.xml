@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_etims_purchase_tree" model="ir.actions.act_window">
+            <field name="name">ETIMS Purchases</field>
+            <field name="res_model">etims.purchases</field>
+            <field name="view_mode">tree</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_etims_purchase_items_sub" parent="purchase.menu_procurement_management"
+                  name="ETIMS Purchases" action="action_etims_purchase_tree"/>
+
+        <record id="view_etims_purchases_tree" model="ir.ui.view">
+            <field name="name">etims.purchases.tree</field>
+            <field name="model">etims.purchases</field>
+
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+
+                    <field name="spplrTin"/>
+                    <field name="spplrNm"/>
+                    <field name="spplrBhfId"/>
+                    <field name="invcNo"/>
+                    <field name="cfmDt"/>
+                    <field name="salesDt"/>
+                    <field name="stockRlsDt"/>
+                    <field name="totItemCnt"/>
+                    <field name="totTaxblAmt"/>
+                    <field name="totTaxAmt"/>
+                    <field name="totAmt"/>
+
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_etims_purchases_form" model="ir.ui.view">
+            <field name="name">etims.purchases.form</field>
+            <field name="model">etims.purchases</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_process_items" string="Create Purchase Order" type="object" class="oe_highlight" attrs="{'invisible':[('is_done','=',True)]}"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="spplrTin"/>
+                            <field name="spplrNm"/>
+                            <field name="spplrBhfId"/>
+                            <field name="invcNo"/>
+                            <field name="rcptTyCd"/>
+                            <field name="pmtTyCd"/>
+                            <field name="cfmDt"/>
+                            <field name="salesDt"/>
+                            <field name="stockRlsDt"/>
+                            <field name="totItemCnt"/>
+                            <field name="taxblAmtA"/>
+                            <field name="taxblAmtB"/>
+                        </group>
+                        <group>
+                            <field name="taxblAmtC"/>
+                            <field name="taxblAmtD"/>
+                            <field name="taxRtA"/>
+                            <field name="taxRtB"/>
+                            <field name="taxRtC"/>
+                            <field name="taxRtD"/>
+                            <field name="taxAmtA"/>
+                            <field name="taxAmtB"/>
+                            <field name="taxAmtC"/>
+                            <field name="taxAmtD"/>
+                            <field name="totTaxblAmt"/>
+                            <field name="totTaxAmt"/>
+                            <field name="totAmt"/>
+                            <field name="is_done"/>
+                            <field name="remark"/>
+                        </group>
+                    </sheet>
+                    <sheet>
+                        <notebook>
+                            <page string="Items">
+                                <field name="etims_purchase_items">
+                                    <tree>
+                                        <field name="is_mapping"/>
+                                        <field name="product_id" attrs="{'required':[('is_mapping','=',True)]}"/>
+                                        <field name="itemCd"/>
+                                        <field name="itemClsCd"/>
+                                        <field name="itemNm"/>
+                                        <field name="qty"/>
+                                        <field name="prc"/>
+                                        <field name="splyAmt" invisible="1"/>
+                                        <field name="dcRt" invisible="1"/>
+                                        <field name="taxTyCd" invisible="1"/>
+                                        <field name="taxblAmt" invisible="1"/>
+                                        <field name="taxAmt" invisible="1"/>
+                                        <field name="totAmt" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Invoice Item View -->
+        <record id="view_etims_purchase_items_tree" model="ir.ui.view">
+            <field name="name">etims.purchase.items.tree</field>
+            <field name="model">etims.purchase.items</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="itemSeq"/>
+                    <field name="itemCd"/>
+                    <field name="itemClsCd"/>
+                    <field name="itemNm"/>
+                    <field name="bcd"/>
+                    <field name="pkgUnitCd"/>
+                    <field name="pkg"/>
+                    <field name="qtyUnitCd"/>
+                    <field name="qty"/>
+                    <field name="prc"/>
+                    <field name="splyAmt"/>
+                    <field name="dcRt"/>
+                    <field name="dcAmt"/>
+                    <field name="taxTyCd"/>
+                    <field name="taxblAmt"/>
+                    <field name="taxAmt"/>
+                    <field name="totAmt"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_etims_purchase_items_form" model="ir.ui.view">
+            <field name="name">etims.purchase.items.form</field>
+            <field name="model">etims.purchase.items</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="is_mapping"/>
+                            <field name="product_id" attrs="{'required':[('is_mapping','=',True)]}"/>
+                            <field name="itemSeq"/>
+                            <field name="itemCd"/>
+                            <field name="itemClsCd"/>
+                            <field name="itemNm"/>
+                            <field name="bcd"/>
+                            <field name="pkgUnitCd"/>
+                            <field name="pkg"/>
+                            <field name="qtyUnitCd"/>
+                            <field name="qty"/>
+                            <field name="prc"/>
+                            <field name="splyAmt"/>
+                            <field name="dcRt"/>
+                            <field name="dcAmt"/>
+                            <field name="taxTyCd"/>
+                            <field name="taxblAmt"/>
+                            <field name="taxAmt"/>
+                            <field name="totAmt"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Window Action for Form View -->
+        <record id="action_etims_purchases_form" model="ir.actions.act_window">
+            <field name="name">ETIMS Purchases Form</field>
+            <field name="res_model">etims.purchases</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="oo_yourapps_etims.view_etims_purchases_form"/>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

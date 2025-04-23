@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- res.company inherit form view -->
+    <record id="oo_esd_view_company_form" model="ir.ui.view">
+        <field name="name">res.company.inherit.view.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//notebook[1]" position="inside">
+                <page name="etims" string="ETIMS Setup">
+                    <group>
+                        <group>
+                            <field name="has_etims" />
+                        </group> 
+                    </group>
+                    <div class="d-flex justify-content-around">
+                        <button string="Initialize" class="oe_secondary" icon="fa-print" name="etims_initialize" type="object" attrs="{'invisible':[('has_etims', '=', False)]}" />
+                        <button string="Save Branch" class="oe_secondary" icon="fa-print" name="etims_save_branch" type="object" attrs="{'invisible':[('has_etims', '=', False)]}" />
+                        <button string="Save Users" class="oe_secondary" icon="fa-print" name="etims_save_users" type="object" attrs="{'invisible':[('has_etims', '=', False)]}" />
+
+                        
+                        <button string="Fetch Codes" class="oe_secondary" icon="fa-download" name="etims_get_standard_codes" type="object" attrs="{'invisible':[('has_etims', '=', False)]}" />
+                        <button string="Fetch Notices" class="oe_secondary" icon="fa-download" name="etims_get_notices" type="object" attrs="{'invisible':[('has_etims', '=', False)]}" />
+                        <button string="Fetch Branches" class="oe_secondary" icon="fa-download" name="etims_get_branches" type="object" attrs="{'invisible':[('has_etims', '=', False)]}" />
+                        <button string="Fetch Purchases" class="oe_secondary" icon="fa-download" name="action_get_purchases" type="object" attrs="{'invisible':[('has_etims', '=', False)]}" />
+                        
+
+                        <button string="Fetch Class Lists" class="oe_secondary" icon="fa-download" name="etims_get_classification_codes" type="object" attrs="{'invisible':[('has_etims', '=', False)]}" />
+                    </div>
+
+                    <notebook attrs="{'invisible':[('has_etims', '=', False)]}">
+                        <page name="etims_metadata" string="ETIMS Metadata">
+                            <group>
+                                <group>
+                                    <field name="etims_url" attrs="{'required':[('has_etims', '=', True)]}"/>
+                                    <!-- <field name="etims_clientid" password="1" attrs="{'required':[('has_etims', '=', True)]}"/> -->
+                                    <!-- <field name="etims_client_secret" password="1" attrs="{'required':[('has_etims', '=', True)]}"/> -->
+                                </group>
+                                <group>
+                                    <field name="etims_branchid" attrs="{'required':[('has_etims', '=', True)]}"/>
+                                    <field name="etims_device_serial" attrs="{'required':[('has_etims', '=', True)]}"/>
+                                    <field name="etims_token" groups="base.group_no_one" password="1"/>
+                                    <field name="etims_ok" readonly="0"/>
+                                </group>
+
+                            </group>
+                        </page>
+                    </notebook>
+                </page>
+            </xpath>
+
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="attrs">{'required': [('has_etims', '=', True)]}</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- res.partner inherit form view -->
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button string="Save to Etims" name="etims_save" type="object" attrs="{'invisible': [('vat', '=', False)]}"/>
+                </header>
+            </xpath>
+
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="etims_ok"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- res.users inherit form view -->
+    <record id="view_users_form" model="ir.ui.view">
+        <field name="name">res.users.inherit.view.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//header" position="inside">
+                <button string="Save to Etims" name="etims_save" type="object" />
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

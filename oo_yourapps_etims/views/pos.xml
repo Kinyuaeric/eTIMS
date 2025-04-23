@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <!-- pos.order inherit form view -->
+    <record id="view_pos_pos_form" model="ir.ui.view">
+        <field name="name">pos.order.inherit.view.form</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//header" position="inside">
+                <button string="Save to Etims" name="etims_save" type="object" attrs="{'invisible': ['|', ('cu_invoice_no', '!=', False), ('state', '!=', 'posted')]}"/>
+            </xpath>
+
+            <xpath expr="//page[@name='extra']" position="inside">
+                <group string="ETIMS" name="etims">
+                    <field name="receipt_no"/>
+                    <field name="receipt_no"/>
+                    <field name="receipt_sign"/>
+                    <field name="cu_invoice_no"/>
+                    <field name="sdc_id"/>
+                    <field name="intr_data"/>
+                    <field name="receipt_date"/>
+                    <field name="qrcode_url" invisible="1"/>
+                    <field name="qrcode" widget="image" class="oe_avatar" />
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+    
+</odoo>

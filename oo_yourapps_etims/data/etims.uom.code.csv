@@ -1,0 +1,44 @@
+id,code,name
+etims_unit_4b,4B,Pair
+etims_unit_av,AV,Cap
+etims_unit_ba,BA,Barrel
+etims_unit_be,BE,bundle
+etims_unit_bg,BG,bag
+etims_unit_bl,BL,block
+etims_unit_bll,BLL,"BLL Barrel (petroleum) (158,98"
+etims_unit_bx,BX,box
+etims_unit_ca,CA,Can
+etims_unit_cel,CEL,Cell
+etims_unit_cmt,CMT,centimetre
+etims_unit_cr,CR,CARAT
+etims_unit_dr,DR,Drum
+etims_unit_dz,DZ,Dozen
+etims_unit_gll,GLL,Gallon
+etims_unit_grm,GRM,Gram
+etims_unit_gro,GRO,Gross
+etims_unit_kg,KG,Kilogram
+etims_unit_ktm,KTM,kilometre
+etims_unit_kwt,KWT,kilowatt
+etims_unit_l,L,Litre
+etims_unit_lbr,LBR,pound
+etims_unit_lk,LK,link
+etims_unit_ltr,LTR,Litre
+etims_unit_m,M,Metre
+etims_unit_m2,M2,Square Metre
+etims_unit_m3,M3,Cubic Metre
+etims_unit_mgm,MGM,milligram
+etims_unit_mtr,MTR,metre
+etims_unit_mwt,MWT,megawatt hour (1000 kW.h)
+etims_unit_no,NO,Number
+etims_unit_nx,NX,part per thousand
+etims_unit_pa,PA,packet
+etims_unit_pg,PG,plate
+etims_unit_pr,PR,pair
+etims_unit_rl,RL,reel
+etims_unit_ro,RO,roll
+etims_unit_set,SET,set
+etims_unit_st,ST,sheet
+etims_unit_tne,TNE,tonne (metric ton)
+etims_unit_tu,TU,tube
+etims_unit_u,U,Pieces/item [Number]
+etims_unit_yrd,YRD,yard

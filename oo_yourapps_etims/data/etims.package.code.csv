@@ -1,0 +1,53 @@
+id,code,name
+etims_packaging_am,AM,Ampoule
+etims_packaging_ba,BA,Barrel
+etims_packaging_bc,BC,Bottlecrate
+etims_packaging_be,BE,Bundle
+etims_packaging_bf,BF,"Balloon, non-protected"
+etims_packaging_bg,BG,Bag
+etims_packaging_bj,BJ,Bucket
+etims_packaging_bk,BK,Basket
+etims_packaging_bl,BL,Bale
+etims_packaging_bq,BQ,"Bottle, protected cylindrical"
+etims_packaging_br,BR,Bar
+etims_packaging_bv,BV,"Bottle, bulbous"
+etims_packaging_bz,BZ,Bag
+etims_packaging_ca,CA,Can
+etims_packaging_ch,CH,Chest
+etims_packaging_cj,CJ,Coffin
+etims_packaging_cl,CL,Coil
+etims_packaging_cr,CR,"Wooden Box, Wooden Case"
+etims_packaging_cs,CS,Cassette
+etims_packaging_ct,CT,Carton
+etims_packaging_ctn,CTN,Container
+etims_packaging_cy,CY,Cylinder
+etims_packaging_dr,DR,Drum
+etims_packaging_gt,GT,Extra Countable Item
+etims_packaging_hh,HH,Hand Baggage
+etims_packaging_iz,IZ,Ingots
+etims_packaging_jr,JR,Jar
+etims_packaging_ju,JU,Jug
+etims_packaging_jy,JY,Jerry CAN Cylindrical
+etims_packaging_kz,KZ,Canester
+etims_packaging_lz,LZ,"Logs, in bundle/bunch/truss"
+etims_packaging_nt,NT,Net
+etims_packaging_ou,OU,Non-Exterior Packaging Unit
+etims_packaging_pd,PD,Poddon
+etims_packaging_pg,PG,Plate
+etims_packaging_pi,PI,Pipe
+etims_packaging_po,PO,Pilot
+etims_packaging_pu,PU,Traypack
+etims_packaging_rl,RL,Reel
+etims_packaging_ro,RO,Roll
+etims_packaging_rz,RZ,"Rods, in bundle/bunch/truss"
+etims_packaging_sk,SK,Skeletoncase
+etims_packaging_ty,TY,"Tank, cylindrical"
+etims_packaging_vg,VG,"Bulk,gas(at 1031 mbar 15 oC)"
+etims_packaging_vl,VL,"Bulk,liquid(at normal temperat"
+etims_packaging_vo,VO,"Bulk, solid, large particles(n"
+etims_packaging_vq,VQ,"Bulk, gas(liquefied at abnorma"
+etims_packaging_vr,VR,"Bulk, solid, granular particle"
+etims_packaging_vt,VT,Extra Bulk Item
+etims_packaging_vy,VY,"Bulk, fine particles(powder)"
+etims_packaging_ml,ML,Mills
+etims_packaging_tn,TN,TAN

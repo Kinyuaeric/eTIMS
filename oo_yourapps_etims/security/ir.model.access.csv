@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_etims_standard_code_user,oo_yourapps_etims.etims.standard.code,model_etims_standard_code,base.group_user,1,1,1,1
+access_etims_classification_code_user,oo_yourapps_etims.etims.classification.code,model_etims_classification_code,base.group_user,1,1,1,1
+access_etims_uom_code_user,oo_yourapps_etims.etims.uom.code,model_etims_uom_code,base.group_user,1,1,1,1
+access_etims_package_code_user,oo_yourapps_etims.etims.package.code,model_etims_package_code,base.group_user,1,1,1,1
+access_etims_notices,oo_yourapps_etims.etims.notices,model_etims_notices,base.group_user,1,1,1,1
+access_etims_branches,oo_yourapps_etims.etims.branches,model_etims_branches,base.group_user,1,1,1,1
+access_etims_purchase_items,etims.purchase.items,model_etims_purchase_items,,1,1,1,1
+access_etims_purchases,etims.purchases,model_etims_purchases,,1,1,1,1

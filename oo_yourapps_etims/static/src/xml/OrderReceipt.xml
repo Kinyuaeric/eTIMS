@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<templates id="template" xml:space="preserve">
+
+    <t t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('before-footer')]" position="after">
+            <div t-if="receipt.receipt_sign">
+                <br />
+                <div>
+                    <img t-if="receipt.qrcode" id="posqrcode" t-att-src="'data:image/png;base64,' + receipt.qrcode" width="110" heigh="110" style="margin: 0 auto !important;"/>
+                </div>
+                <div class="text-left" t-if="receipt.receipt_sign">
+                    <p style="font-size: 11px !important;">
+                        <span>
+                            CU NO: <t t-esc="receipt.receipt_sign"/>
+                        </span>
+                    </p>
+                    <p style="font-size: 11px !important;">
+                        <span>
+                            DATE: <t t-esc="receipt.receipt_date"/>
+                        </span>
+                    </p>
+                </div>
+
+            </div>
+
+        </xpath>
+    </t>
+</templates>
